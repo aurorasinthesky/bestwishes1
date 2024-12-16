@@ -102,13 +102,4 @@ with tab2:
     bestwishes_title = st.text_input("Tebrik Kartı Başlığı")
 
     if st.button("📥 Tebrik Kartını İndir"):
-        wishes = st.session_state.get('wishes', 'Henüz bir tebrik kartı oluşturulmadı.')
-        pdf = FPDF()
-        pdf.add_page()
-        pdf.set_font("Arial", size=12)
-        pdf.cell(200, 10, txt = bestwishes_title, ln=True, align='C')
-        pdf.multi_cell(0, 10, txt = wishes.encode('latin-1', 'replace').decode('latin-1'))
-        pdf.output(f"{bestwishes_title}.pdf")
-
-        st.success(f"{bestwishes_title}.pdf adlı tebrik kartı başarıyla indirildi. 🎉")
-        st.markdown(f"[{bestwishes_title}.pdf](./{bestwishes_title}.pdf)")  # Download Link for PDF
+        st.info("PDF indirme özelliği yakında eklenecek!")
